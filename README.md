@@ -79,6 +79,11 @@ You can try loading these with
 2. Forward and backward propagation operations
 3. Model which uses GPU (with ArrayFire) 
 
+#### Additional features
+1. Model save and load
+2. Batch normalization
+3. Regularization
+
 ---
 
 Last update date: June 11, 2021
