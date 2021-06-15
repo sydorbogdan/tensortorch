@@ -68,6 +68,17 @@ You can try loading these with
 #### Architectures
 1. Classic (with dense layers)
 2. RNN
+
+#### Optimizers
+1. GD
+2. SGD
+3. Batch GD
+
+#### Parallelism
+1. By batches
+2. Forward and backward propagation operations
+3. Model which uses GPU (with ArrayFire) 
+
 ---
 
 Last update date: June 11, 2021
