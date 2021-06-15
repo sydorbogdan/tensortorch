@@ -84,6 +84,27 @@ You can try loading these with
 2. Batch normalization
 3. Regularization
 
+### Example
+```
+// Loads data
+auto train_data = get_data("../data_generation/shuffled_data_noisy_4_point.txt");
+MatrixXd X_train_pts = matrix_from_vector2d(train_data.first);
+MatrixXd Y_train_pts = matrix_from_vector2d(train_data.second);
+// Creates array of pointers to layers
+std::vector<Layers::Layer *> layers = {
+        new Layers::Dense(2, 500, new Activations::Relu, "he"),
+        new Layers::Dense(500, 500, new Activations::Relu, "he"),
+        new Layers::Dense(500, 50, new Activations::Relu, "he"),
+        new Layers::Dense(50, 1, new Activations::Sigmoid, "he")};
+// Model initialization
+Model model(layers);
+// Model compilation
+model.compile(
+        new Losses::BinaryCrossentropy(),
+        new Optimizers::Parallel(128, 0.1));
+// Model training
+model.fit(X_train_pts, Y_train_pts, 100);
+```
 ---
 
 Last update date: June 11, 2021
