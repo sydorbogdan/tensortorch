@@ -63,6 +63,11 @@ You can try loading these with
 
     Model model = Model::Load(models/filename-without-extension)
 
+### Features
+
+#### Architectures
+1. Classic (with dense layers)
+2. RNN
 ---
 
 Last update date: June 11, 2021
